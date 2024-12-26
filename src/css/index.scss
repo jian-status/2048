@@ -10,17 +10,3 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-#board {
-  display: grid;
-  background-color: #9C8878;
-  border-radius: 5px;
-  padding: 5px;
-  gap: 5px;
-  aspect-ratio: 1/1;
-  width: 500px;
-  grid-template-columns: repeat(4, 1fr);
-  @media (max-width: 525px) {
-    width: 95vw;
-  }
-}

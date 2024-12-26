@@ -1,8 +1,9 @@
 import BoardTile from "./BoardTile";
-import { useState, useRef, useEffect } from "react";
-
+import { useState, useRef } from "react";
+import PlayerScore from "./PlayerScore";
+import GameOver from "./GameOver";
+import "./css/App.scss"
 type TypeTiles = JSX.Element[][];
-
 let game: TypeTiles = [];
 
 function resetBoard(setBoard, tile_count, score) {
@@ -159,15 +160,12 @@ export default function App () {
   }
   return (
     <div id="bg">
-      {tile_count.current != 16 ? "" : <div>Game over</div>}
-      <div>
-        <div>Score: {score.current}</div>
-        <div>Highest Score: {highest_score.current}</div>
-      </div>
+      {tile_count.current != 16 ? "" : <GameOver/>}
+      <PlayerScore current={score.current} highest={highest_score.current}/>
       <div id="board" onKeyDown={(e) => onKeyDown(e, board, setBoard, tile_count, score)}>
         {game.flat()}
       </div>
-      <button onClick={() => resetBoard(setBoard, tile_count, score)}>reset</button>
+      <button className="resetButton" onClick={() => resetBoard(setBoard, tile_count, score)}>reset</button>
     </div>
   )
 }

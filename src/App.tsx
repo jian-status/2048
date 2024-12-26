@@ -86,17 +86,18 @@ function onKeyDown(event: any, board: any, setBoard: any) {
       }
     }
   }
-  console.log("after\n ");
-  console.log(new_board)
+  // add new tile
+  let tile_x;
+  let tile_y;
+  while (tile_x == undefined || tile_y == undefined || new_board[tile_x][tile_y] != 0){
+    tile_x = Math.floor(Math.random() * 3);
+    tile_y = Math.floor(Math.random() * 3);
+  }
+  new_board[tile_x][tile_y] = 2;
+
+  // save board
+
   setBoard(new_board);
-  // game = [];
-  // for (let row = 0; row < 4; row++) {
-  //   let row_of_tiles = [];
-  //   for (let col = 0; col < 4; col++) {
-  //     row_of_tiles.push(<BoardTile id={row + col} value={board[row][col]}/>)
-  //   }
-  //   game.push(row_of_tiles);
-  // }
 }
 
 export default function App () {
@@ -116,7 +117,7 @@ export default function App () {
     let tile2_start = Math.floor(Math.random() * 8);
     let tile2_x;
     let tile2_y;
-    while (tile1_x == tile2_x && tile1_y == tile2_y) { // we want to always start with 2 tiles
+    while (tile1_x == tile2_x && tile1_y == tile2_y || tile2_x == undefined) { // we want to always start with 2 tiles
       tile2_x = Math.floor(Math.random() * 3);
       tile2_y = Math.floor(Math.random() * 3);
     }
@@ -126,9 +127,6 @@ export default function App () {
     else { tile2_start = 2; }
 
     temp_board[tile1_x][tile1_y] = tile1_start;
-
-    console.log(tile1_x + " " + tile1_y + " " + tile1_start + "\n")
-    console.log(tile2_x + " " + tile2_y + " " + tile2_start + "\n")
 
     temp_board[tile2_x][tile2_y] = tile2_start;
     setBoard(temp_board);

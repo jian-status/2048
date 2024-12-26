@@ -7,7 +7,7 @@ let colors = [
 ]
 export default function BoardTile({ id, value}: {id: number, value: number }) {
   return (
-    <div tabIndex={id} key={id} className={`${colors[Math.log2(value)]} ` + styles.tile}>
+    <div tabIndex={id} className={`${colors[Math.log2(value)]} ` + styles.tile}>
       {value}
     </div>
   )

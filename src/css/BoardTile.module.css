@@ -1,4 +1,4 @@
-.tile {
+.tile, .twothousandfourtyeight, .onethousandtwentyfour, .fivehundredtwelve, .twohundredfiftysix, .onehundredtwentyeight, .sixtyfour, .thirtytwo, .sixteen, .eight, .four, .two {
   background-color: #BDAC98;
   display: flex;
   width: 100%;
@@ -11,5 +11,45 @@
 }
 
 .two {
-  background-color: #BDAC98;
+  background-color: #9e0142;
+}
+
+.four {
+  background-color: #d53e4f;
+}
+
+.eight {
+  background-color: #f46d43;
+}
+
+.sixteen {
+  background-color: #fdae61;
+}
+
+.thirtytwo {
+  background-color: #fee08b;
+}
+
+.sixtyfour {
+  background-color: #ffffbf;
+}
+
+.onehundredtwentyeight {
+  background-color: #e6f598;
+}
+
+.twohundredfiftysix {
+  background-color: #abdda4;
+}
+
+.fivehundredtwelve {
+  background-color: #66c2a5;
+}
+
+.onethousandtwentyfour {
+  background-color: #3288bd;
+}
+
+.twothousandfourtyeight {
+  background-color: #5e4fa2;
 }/*# sourceMappingURL=BoardTile.module.css.map */

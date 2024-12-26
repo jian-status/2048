@@ -11,45 +11,56 @@
 }
 
 .two {
-  background-color: #BDAC98;
+  @extend .tile;
+  background-color: #9e0142;
 }
-
 .four {
-
+  @extend .tile;
+  background-color: #d53e4f;
 }
 
 .eight {
-
+  @extend .tile;
+  background-color: #f46d43;
 }
 
 .sixteen {
-
+  @extend .tile;
+  background-color: #fdae61;
 }
 
 .thirtytwo {
+  @extend .tile;
+  background-color: #fee08b;
 
 }
 
 .sixtyfour {
-
+  @extend .tile;
+  background-color: #ffffbf;
 }
 
 .onehundredtwentyeight {
-
+  @extend .tile;
+  background-color: #e6f598;
 }
 
 .twohundredfiftysix {
-
+  @extend .tile;
+  background-color: #abdda4;
 }
 
 .fivehundredtwelve {
-  
+  @extend .tile;
+  background-color: #66c2a5;
 }
 
 .onethousandtwentyfour {
-
+  @extend .tile;
+  background-color: #3288bd;
 }
 
 .twothousandfourtyeight{
-  
+  @extend .tile;
+  background-color: #5e4fa2;
 }

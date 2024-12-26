@@ -110,19 +110,26 @@ export default function App () {
       [0, 0, 0, 0]
     ];
     // general: Math.floor(Math.random() * (max - min + 1)) + min
-    let tile1_x = Math.floor(Math.random() * (3));
-    let tile1_y = Math.floor(Math.random() * (3));
-    let tile2_x = Math.floor(Math.random() * (3));
-    let tile2_y = Math.floor(Math.random() * (3));
+    let tile1_x = Math.floor(Math.random() * 3);
+    let tile1_y = Math.floor(Math.random() * 3);
     let tile1_start = Math.floor(Math.random() * 8);
     let tile2_start = Math.floor(Math.random() * 8);
-
+    let tile2_x;
+    let tile2_y;
+    while (tile1_x == tile2_x && tile1_y == tile2_y) { // we want to always start with 2 tiles
+      tile2_x = Math.floor(Math.random() * 3);
+      tile2_y = Math.floor(Math.random() * 3);
+    }
     if (tile1_start == 9) { tile1_start = 4; } // 10% of time will start with 4 
     else { tile1_start = 2; } // 90% of time will start with 2
     if (tile2_start == 9) { tile2_start = 4; }
     else { tile2_start = 2; }
 
     temp_board[tile1_x][tile1_y] = tile1_start;
+
+    console.log(tile1_x + " " + tile1_y + " " + tile1_start + "\n")
+    console.log(tile2_x + " " + tile2_y + " " + tile2_start + "\n")
+
     temp_board[tile2_x][tile2_y] = tile2_start;
     setBoard(temp_board);
   }
